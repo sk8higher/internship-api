@@ -1,5 +1,9 @@
 # Internship School API assignment
 
+Hosted on VPS here: [Link](http://95.174.94.72:3000)
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/34454879-a58ad5b1-c341-431d-ab37-b758704757ae?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D34454879-a58ad5b1-c341-431d-ab37-b758704757ae%26entityType%3Dcollection%26workspaceId%3D2ecc6e1f-7830-4fcb-820e-a0e393c4f790)
+
 - Ruby 3.3.2
 - Rails 7.1.3
 
