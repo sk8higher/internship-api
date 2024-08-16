@@ -1,24 +1,30 @@
-# README
+# Internship School API assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 3.3.2
+- Rails 7.1.3
 
-Things you may want to cover:
+Needed to change model name from Class to Group to avoid collisions (`Class` is a reserved keyword).
 
-* Ruby version
+# Implemented routes:
 
-* System dependencies
+## POST /students
+Requires `student` object, returns a created `student` as JSON, also `X-Auth-Token` in headers (JWT token).
 
-* Configuration
+## DELETE /students/:student_id
+Requires `X-Auth-Token` from the last request, deletes a student.
 
-* Database creation
+## GET /schools/:school_id/groups/:group_id/students
+Shows all students from a group in school.
 
-* Database initialization
+## GET /schools/:school_id/groups/:group_id/
+Shows all groups in school.
 
-* How to run the test suite
+## Local usage
+You need `.env.local` file for development env and `.env.test.local` for test env.
+Example:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+DATABASE_URL=postgresql://postgres:password@postgres:5432/internship_api_development
+JWT_ISSUER=<your-issuer>
+JWT_SECRET=<your-secret>
+```
