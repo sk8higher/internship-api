@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :schools, only: [] do
-    resources :groups, only: :index do
-      resources :students, only: :index
+  scope '/', defaults: { format: :json } do
+    resources :schools, only: [] do
+      resources :groups, only: :index do
+        resources :students, only: :index
+      end
     end
-  end
 
-  resources :students, only: %i[create destroy]
+    resources :students, only: %i[create destroy]
+  end
 end
