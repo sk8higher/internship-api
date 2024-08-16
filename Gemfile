@@ -9,6 +9,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "dotenv", "~> 3.1"
 gem "jwt", "~> 2.8"
+gem "rubocop-rails", "~> 2.25", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
