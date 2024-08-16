@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   def index
     @students = School.find(params[:school_id]).groups.find(params[:group_id]).students
 
-    render json: @students, status: 200
+    render json: { data: @students }
   end
 
   def create
