@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class GroupsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test 'should get index' do
     @school = School.create
     @group = @school.groups.create(number: 5, letter: 'Б', students_count: 32)
 

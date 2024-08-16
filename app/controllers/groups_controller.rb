@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   def index
     @groups = School.find(params[:school_id]).groups

@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class StudentsControllerTest < ActionDispatch::IntegrationTest
   def setup
@@ -13,7 +15,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     )
   end
 
-  test "should get index" do
+  test 'should get index' do
     get school_group_students_url(@school.id, @group.id)
     assert_response :success
 
@@ -28,7 +30,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     }
   end
 
-  test "should post create" do
+  test 'should post create' do
     assert_difference 'Student.count', 1 do
       post students_url, params: { student: @student }, as: :json
     end
@@ -36,7 +38,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
   end
 
-  test "should delete student" do
+  test 'should delete student' do
     post students_url, params: { student: @student }, as: :json
     assert_response :success
 

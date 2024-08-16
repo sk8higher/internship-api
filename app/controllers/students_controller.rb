@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StudentsController < ApplicationController
   def index
     @students = School.find(params[:school_id]).groups.find(params[:group_id]).students
@@ -30,15 +32,6 @@ class StudentsController < ApplicationController
     else
       render json: { error: 'Incorrect Student id.' }, status: 400
     end
-
-  rescue JWT::DecodeError
-    render json: { error: 'A token must be passed.' }, status: 401
-  rescue JWT::ExpiredSignature
-    render json: { error: 'The token has expired.' }, status: 403
-  rescue JWT::InvalidIssuerError
-    render json: { error: 'The token does not have a valid issuer.' }, status: 403
-  rescue JWT::InvalidIatError
-    render json: { error: 'The token does not have a valid "issued at" time.' }, status: 403
   end
 
   private
@@ -63,5 +56,13 @@ class StudentsController < ApplicationController
   def decode_jwt(token)
     options = { algorithm: 'HS512', iss: ENV['JWT_ISSUER'] }
     JWT.decode(token, ENV['JWT_SECRET'], true, options)[0]
+  rescue JWT::DecodeError
+    render json: { error: 'A token must be passed.' }, status: 401
+  rescue JWT::ExpiredSignature
+    render json: { error: 'The token has expired.' }, status: 403
+  rescue JWT::InvalidIssuerError
+    render json: { error: 'The token does not have a valid issuer.' }, status: 403
+  rescue JWT::InvalidIatError
+    render json: { error: 'The token does not have a valid "issued at" time.' }, status: 403
   end
 end
