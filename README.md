@@ -32,3 +32,7 @@ DATABASE_URL=postgresql://postgres:password@postgres:5432/internship_api_develop
 JWT_ISSUER=<your-issuer>
 JWT_SECRET=<your-secret>
 ```
+
+To run the app:
+
+`docker compose up`
